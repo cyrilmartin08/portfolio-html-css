@@ -1,0 +1,381 @@
+/* --------- Base / Reset --------- */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden; /* Prevent horizontal scroll on small devices */
+}
+
+body {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: #111827; /* gray-900 */
+  background: linear-gradient(to bottom, #ffffff, #f9fafb); /* white -> gray-50 */
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* --------- Utilities --------- */
+.container {
+  /* Keep container scalable and safe on all widths incl. ~1048px */
+  width: min(100%, 1040px);
+  margin-inline: auto;
+
+  /* Responsive side padding — slightly reduced to avoid squeeze near 1k px */
+  padding-inline: clamp(16px, 3.5vw, 24px);
+
+  /* Safe area support for notched phones without over-padding medium widths */
+  padding-left: max(16px, env(safe-area-inset-left));
+  padding-right: max(16px, env(safe-area-inset-right));
+}
+
+.section {
+  padding: 48px 0;
+}
+
+.mt { margin-top: 16px; }
+
+.small { font-size: 0.9rem; }
+.muted { color: #6b7280; } /* gray-500 */
+.body { color: #374151; }  /* gray-700 */
+
+.eyebrow {
+  font-size: 0.9rem;
+  color: #6b7280;
+  margin: 0;
+}
+
+.display {
+  font-weight: 800;
+  margin: 8px 0 0 0;
+  font-size: clamp(1.75rem, 5vw, 2.25rem); /* responsive */
+}
+
+.h2 {
+  font-weight: 700;
+  margin: 0 0 16px 0;
+  font-size: clamp(1.25rem, 3.5vw, 1.5rem); /* responsive */
+}
+
+.h3 {
+  font-size: 1.125rem; /* lg */
+  font-weight: 600;
+  margin: 0 0 16px 0;
+}
+
+.h4 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* Links */
+a { color: inherit; text-decoration: none; }
+a.link { text-decoration: underline; font-size: 0.95rem; }
+a:focus { outline: 2px solid #111827; outline-offset: 2px; }
+
+/* Buttons */
+.button-row {
+  display: flex;
+  gap: 10px 12px;   /* row gap then column gap */
+  flex-wrap: wrap;  /* ensure wrapping on small screens */
+  margin-top: 16px;
+}
+
+.button-row.wrap { flex-wrap: wrap; }
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  border: 1px solid transparent;
+  transition: background .2s ease, color .2s ease, border-color .2s ease, transform .05s ease;
+}
+
+.btn:hover { transform: translateY(-1px); }
+
+.btn-outline {
+  border-color: #e5e7eb; /* gray-200 */
+  background: transparent;
+}
+
+.btn-outline:hover { background: #f9fafb; }
+
+.btn-dark {
+  background: #111827; color: #ffffff;
+}
+
+.btn-dark:hover { background: #0b1220; }
+
+.btn-soft {
+  border-color: #e5e7eb;
+  background: #ffffff;
+}
+
+.btn-soft:hover { background: #f3f4f6; }
+
+/* Header */
+.site-header {
+  padding: 24px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* Allow wrapping to prevent mid-width breakage (e.g., ~1048px) */
+  flex-wrap: wrap;
+  row-gap: 12px;
+}
+
+.site-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap; /* allow wrap at mid widths */
+}
+
+.site-nav a {
+  font-size: 0.95rem;
+  text-decoration: none;
+  border-radius: 8px;
+  padding: 6px 8px;
+}
+
+.site-nav a:hover { text-decoration: underline; }
+
+/* Slightly tighten header spacing around the 900–1120px band */
+@media (max-width: 1120px) {
+  .site-nav { gap: 12px; }
+  .site-header { padding-inline: clamp(16px, 3vw, 20px); }
+}
+
+/* Grid */
+.grid {
+  display: grid;
+  gap: 24px;
+
+
+}
+
+.two-col {
+  /* minmax(0, 1fr) prevents overflow by allowing columns to shrink */
+  grid-template-columns: minmax(0, 1fr);
+  align-items: center;
+  max-width: 1080px;
+  margin:auto;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+/* Stack -> two columns a bit earlier for better fit */
+@media (min-width: 700px) {
+  .two-col { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+}
+
+/* Hero image */
+.hero-image-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.hero-image {
+  width: 220px;        /* square */
+  height: 220px;       /* square */
+  object-fit: cover;   /* crop to fit */
+  border-radius: 16px;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+  display: block;
+}
+
+/* Shrink a bit more on very narrow devices */
+@media (max-width: 420px) {
+  .hero-image {
+    width: 180px;
+    height: 180px;
+  }
+}
+
+/* Card */
+.card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb; /* gray-200 */
+  border-radius: 16px;
+  padding: clamp(16px, 4vw, 20px); /* responsive padding */
+  box-shadow: 0 6px 16px rgba(0,0,0,0.04);
+  align-items: center;
+}
+
+.quick-facts { 
+  justify-self: center;
+  /* margin-top: 32px; */
+  max-width: 770px;
+  gap: 8px;
+  margin: auto;
+  margin: 20px 20px 20px 20px;
+  padding-left: 25px;
+  padding-right: 25px;
+  box-sizing: border-box;
+}
+
+.facts {
+  list-style: none;
+  margin: 12px 12px 0 0;
+  padding: 0;
+}
+
+.facts li {
+  padding: 6px 0;
+  color: #374151;
+}
+
+/* Tags */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.tag {
+  font-size: 0.8rem;
+  padding: 6px 10px;
+  background: #f3f4f6; /* gray-100 */
+  border: 1px solid #e5e7eb; /* gray-200 */
+  border-radius: 10px;
+  color: #4b5563; /* gray-600 */
+}
+
+/* Links group under cards */
+.links {
+  display: flex;
+  flex-wrap: wrap;     /* wrap to prevent overflow */
+  gap: 10px 12px;
+  margin-top: 12px;
+}
+
+/* Lists */
+.list {
+  margin: 8px 0 0 0;
+  padding-left: 18px;
+}
+
+.list li {
+  color: #374151;
+  margin: 6px 0;
+}
+
+/* Images safety */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Footer */
+.site-footer {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #6b7280;
+  padding: 32px 0;
+}
+
+/* --------- Simple reveal animations (vanilla, no GSAP) --------- */
+.fade-in {
+  opacity: 0;
+  animation: fadeInBody .5s ease forwards;
+}
+
+@keyframes fadeInBody {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.will-reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity .5s ease, transform .5s ease;
+}
+
+.reveal {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --------- Accessibility / prefers-reduced-motion --------- */
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
+
+/* --------- Tiny padding tweak on very small screens --------- */
+@media (max-width: 480px) {
+  .section {
+    padding: 36px 0;
+  }
+}
+
+/* --------- Text wrapping safety --------- */
+p, li, .body, .facts, .links, .tags {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+/* Extra padding for ABOUT section */
+#about {
+  margin: auto;
+  padding-left: 25px;
+  padding-right: 25px;
+  box-sizing: border-box; /* ensures padding stays inside width */
+}
+
+/* Optional: slightly larger padding on small screens */
+@media (max-width: 480px) {
+  #about {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+
+/* Extra padding for CONTACT section */
+#contact {
+  margin: auto;
+  padding-left: 25px;
+  padding-right: 25px;
+  box-sizing: border-box; /* ensures padding fits inside container */
+}
+
+/* Optional: slightly more padding on smaller screens */
+@media (max-width: 480px) {
+  #contact {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+
+/* Add responsive left/right padding to the Projects heading only */
+#projects > h3.h2 {
+  padding-left: clamp(16px, 5vw, 40px);
+  padding-right: clamp(16px, 5vw, 40px);
+  box-sizing: border-box; /* keep padding inside width */
+  width: 100%;
+  display: block;
+}
+
+/* Optional: a tiny bump on very small phones */
+@media (max-width: 480px) {
+  #projects > h3.h2 {
+    padding-left: clamp(20px, 7vw, 48px);
+    padding-right: clamp(20px, 7vw, 48px);
+  }
+}
+
