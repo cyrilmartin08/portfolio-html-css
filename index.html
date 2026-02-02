@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cyril Martin | Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="fade-in">
+
+  <!-- HEADER -->
+  <header class="container site-header">
+    <h1 class="site-title">Cyril Martin</h1>
+    <nav class="site-nav">
+      <a href="#projects">Projects</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a
+        href="cyril_martin_resume.pdf"
+        class="btn btn-dark"
+        download
+        >Resume</a>
+    </nav>
+  </header>
+
+<!-- HERO -->
+<section class="container section section-hero">
+  <div class="grid two-col">
+    <!-- Left -->
+    <div>
+      <p class="eyebrow">Hi, I'm</p>
+      <h2 class="display">Cyril Martin</h2>
+      <p class="lead">
+        Full-stack developer and AI tinkerer — I build thoughtful web and
+        mobile experiences with a focus on clean UI, reliability, and
+        delightful interactions. Currently working as a Tax, Technology &amp; Transformation intern at EY GDS, Bengaluru.
+      </p>
+
+      <!-- Buttons -->
+      <div class="button-row">
+        <a href="mailto:cyrilmartin.tech@gmail.com" class="btn btn-outline">Email</a>
+        <a href="https://github.com/cyrilmartin08" target="_blank" class="btn btn-outline">GitHub</a>
+        <a href="https://www.linkedin.com/in/cyril-martin-32a990265/" target="_blank" class="btn btn-outline">LinkedIn</a>
+        <!--
+        <a href="https://instagram.com/cyrilmartin08" target="_blank" class="btn btn-outline">Instagram</a>
+        <a href="https://www.youtube.com/@CyrilsMelody" target="_blank" class="btn btn-outline">YouTube</a>
+        -->
+      </div>
+    </div>
+
+    <!-- Right -->
+    <div class="hero-image-wrap">
+      <img src="orientation pic.jpeg" alt="Cyril Martin" class="hero-image" />
+    </div>
+  </div>
+</section>
+
+    <!-- Quick facts -->
+    <div class="card quick-facts">
+      <h3 class="h3">Quick facts</h3>
+      <ul class="facts">
+        <li>📍 Bengaluru — Studying Information Science and Engineering at CIT</li>
+        <li>💼 Experience: EY GDS (TTT Intern), THWorks (SDE Intern), Anay Group (Intern), GSSOC contributor</li>
+        <li>⚙️ Stack: React, Next.js, Node, Python, OpenCV, MongoDB</li>
+        <li>🏆 Ranked 814 / 27,000+ in GirlScript Summer of Code</li>
+        <li>🎵 Musician with over 70+ Live Performances (Flute🪈 &amp; Saxophone🎷)</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="container section">
+    <h3 class="h2">Projects</h3>
+
+    <div class="grid two-col">
+      <!-- Project 1 -->
+      <article class="card">
+        <h4 class="h4">Cyril's Chaats</h4>
+        <p class="muted small">Full Stack Food-Ordering Web App</p>
+        <p class="body">
+          Full-stack ordering platform with QR UPI payments, dynamic order forms and MongoDB Atlas for storage. Deployed on Vercel.
+        </p>
+        <div class="tags">
+          <span class="tag">JavaScript</span>
+          <span class="tag">Node.js</span>
+          <span class="tag">MongoDB</span>
+          <span class="tag">Vercel</span>
+        </div>
+        <div class="links">
+          <a href="https://cyrils-chaats.vercel.app" target="_blank" class="link">Live</a>
+          <a href="https://github.com/cyrilmartin08/cyrils-chaats" target="_blank" class="link">Code</a>
+        </div>
+      </article>
+
+      <!-- Project 2 -->
+      <article class="card">
+        <h4 class="h4">PicTune</h4>
+        <p class="muted small">AI Mood &amp; Music Matcher</p>
+        <p class="body">
+          AI-powered responsive web app that analyzes images/videos to detect moods and recommends music. Uses OpenCV + Streamlit.
+        </p>
+        <div class="tags">
+          <span class="tag">Python</span>
+          <span class="tag">OpenCV</span>
+          <span class="tag">Streamlit</span>
+        </div>
+        <div class="links">
+          <a href="https://pictune-ai-c5ez.onrender.com/" target="_blank" class="link">Live</a>
+          <a href="https://github.com/cyrilmartin08/pictune" target="_blank" class="link">Code</a>
+        </div>
+      </article>
+
+      <!-- Project 3 -->
+      <article class="card">
+        <h4 class="h4">CITech Buzz</h4>
+        <p class="muted small">Notification App (React Native)</p>
+        <p class="body">
+          A mobile app delivering real-time academic &amp; event notifications. Built with Expo and tested on Expo Go.
+        </p>
+        <div class="tags">
+          <span class="tag">React Native</span>
+          <span class="tag">Expo</span>
+          <span class="tag">JavaScript</span>
+        </div>
+        <div class="links">
+          <a href="https://github.com/cyrilmartin08/citech-buzz" target="_blank" class="link">Code</a>
+          <a href="https://youtu.be/sxdHspDO7nM" target="_blank" class="link">Demo</a>
+        </div>
+      </article>
+
+      <!-- Project 4 -->
+      <article class="card">
+        <h4 class="h4">AI Wildlife Detection &amp; Alert System</h4>
+        <p class="muted small">Surveillance &amp; Alert System</p>
+        <p class="body">
+          Prototype using Gemini API + OpenCV for detecting wild animals and geofenced alerts. Running as Colab prototypes.
+        </p>
+        <div class="tags">
+          <span class="tag">Python</span>
+          <span class="tag">OpenCV</span>
+          <span class="tag">Google Gemini API</span>
+        </div>
+        <div class="links">
+          <a href="https://colab.research.google.com/drive/1XSCksz9y_1bguOtLocvG19Aq-_PmGQoW" target="_blank" class="link">Code</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="container section">
+    <h3 class="h2">About me</h3>
+    <div class="about">
+      <p>
+        I am a developer with hands-on experience building web and mobile
+        applications. I enjoy solving product-first engineering problems
+        and iterating quickly from prototype to production. My recent work
+        touches on AI-powered image analysis, real-time mobile notifications,
+        and full-stack web systems.
+      </p>
+
+      <h4 class="h4 mt">Education</h4>
+      <p class="small">
+        Information Science &amp; Engineering — Cambridge Institute of Technology, Bengaluru — CGPA: 8.43 (Up
+        to 6th Sem)
+      </p>
+
+      <h4 class="h4 mt">Experience &amp; recognition</h4>
+      <ul class="list">
+        <li>Tax, Technology &amp; Transformation Intern — EY GDS (Jan 2026 – Ongoing)</li>
+        <li>Software Developer Intern — THWorks (Feb 2025 – Apr 2025)</li>
+        <li>Contributor — GirlScript Summer of Code (May 2024 – Aug 2024)</li>
+        <li>Summer Intern — Anay Group (May 2024 – July 2024)</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="container section">
+    <h3 class="h2">Get in touch</h3>
+    <p class="body">
+      Feel free to email me or connect on my socials.
+    </p>
+    <div class="button-row wrap">
+      <a href="mailto:cyrilmartin.tech@gmail.com" class="btn btn-soft">Email</a>
+      <a href="https://github.com/cyrilmartin08" target="_blank" class="btn btn-soft">GitHub</a>
+      <a href="https://www.linkedin.com/in/cyril-martin-32a990265/" target="_blank" class="btn btn-soft">LinkedIn</a>
+      <a href="https://instagram.com/cyrilmartin08" target="_blank" class="btn btn-soft">Instagram</a>
+      <a href="https://www.youtube.com/@CyrilsMelody" target="_blank" class="btn btn-soft">YouTube</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    &copy; <span id="year"></span> Cyril Martin
+  </footer>
+
+  <script>
+    // Auto-update year in footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Simple intersection-based fade-in (replaces GSAP)
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.classList.add('reveal');
+            observer.unobserve(e.target);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    document.querySelectorAll('.section, .card, header').forEach(el => {
+      el.classList.add('will-reveal');
+      observer.observe(el);
+    });
+  </script>
+</body>
+</html>
